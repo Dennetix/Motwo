@@ -1,0 +1,21 @@
+{
+	"noTranslation": ["Keine Übersetzung verfügbar"],
+
+	"internalError": ["Ein Fehler ist aufgetreten"],
+
+	"formNotFilled": ["Bitte fülle alle Felder aus"],
+
+	"loginNotice": ["Melde dich mit deinem oder dem Twitch Account deines Bots an"],
+	"username": ["Nutzername"],
+	"password": ["OAuth Passwort"],
+	"getOauth": ["Hol dir dein OAuth Passwort", "hier"],
+	"rememberLogin": ["Angemeldet bleiben"],
+	"loginButton": ["Anmelden"],
+	"authFailed": ["Nutzername oder Passwort falsch"],
+
+	"joinNotice": ["Verbinde dich mit dem Kanal, in dem du deinen Bot betreiben willst"],
+	"channel": ["Kanal"],
+	"rememberChannel": ["Kanal merken"], 
+	"joinButton": ["Verbinden"],
+	"invalidChannel": ["Dieser Kanal existiert nicht oder wurde gebannt"]
+}

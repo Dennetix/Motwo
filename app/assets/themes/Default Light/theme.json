@@ -1,0 +1,21 @@
+{
+	"images": {
+		"twitchGlitchLogo": "./images/glitchPurple.svg",
+		"cat": "./images/psp5jmil.bmp"
+	},
+
+	"colors": {
+		"background": "#ffffff",
+
+		"text": "#000000",
+		"textError": "#ff0000",
+		
+		"loadingAnimation": "#6441A4",
+
+		"formInputText": "#000000",
+		"formInputBackground": "#eaeaea",
+
+		"formSubmitButton": "#6441A4 ",
+		"formSubmitButtonText": "#ffffff"
+	}
+}

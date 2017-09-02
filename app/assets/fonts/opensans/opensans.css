@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url('woff/light.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('woff/regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('woff/bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Extra Bold';
+    src: url('woff/extrabold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

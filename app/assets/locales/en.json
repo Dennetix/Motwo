@@ -1,0 +1,21 @@
+{
+	"noTranslation": ["No translation available"],
+
+	"internalError": ["An error occurred"],
+
+	"formNotFilled": ["Please fill in all fields"],
+	
+	"loginNotice": ["Log in with your or your bots Twitch account"],
+	"username": ["Username"],
+	"password": ["OAuth Password"],
+	"getOauth": ["Get your OAuth Password", "here"],
+	"rememberLogin": ["Remember login credentials"],
+	"loginButton": ["Login"],
+	"authFailed": ["Username or password incorrect"],
+
+	"joinNotice": ["Join the channel in which you want your bot to operate"],
+	"channel": ["Channel"],
+	"rememberChannel": ["Remember channel"],
+	"joinButton": ["Join"],
+	"invalidChannel": ["This channel doesn't exist or was banned"]
+}

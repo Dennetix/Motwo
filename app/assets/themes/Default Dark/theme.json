@@ -1,0 +1,22 @@
+{
+	"images": {
+		"twitchGlitchLogo": "./images/glitchWhite.svg"
+	},
+
+	"colors": {
+		"background": "#2D3238",
+
+		"text": "#ffffff",
+		"textError": "#ff0000",
+		
+		"startupLoader": "#ffffff",
+
+		"formSubmitButton": "#00aa00",
+		"formSubmitButtonText": "#ffffff",
+
+		"formInputText": "#000000",
+		"formInputBackground": "#3A414B",
+		"formInputBorderFocused": "#3A414B",
+		"formInputBorderBlurred": "#3A414B"
+	}
+}
