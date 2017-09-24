@@ -1,10 +1,10 @@
 {
-	"images": {
+	"files": {
 		"twitchGlitchLogo": "./images/glitchPurple.svg",
 		"cat": "./images/psp5jmil.bmp"
 	},
 
-	"colors": {
+	"values": {
 		"background": "#ffffff",
 
 		"text": "#000000",

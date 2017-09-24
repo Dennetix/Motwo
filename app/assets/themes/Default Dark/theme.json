@@ -1,14 +1,14 @@
 {
-	"images": {
+	"files": {
 		"twitchGlitchLogo": "./images/glitchWhite.svg"
 	},
 
-	"colors": {
+	"values": {
 		"background": "#2D3238",
 
 		"text": "#ffffff",
-		"textError": "#ff0000",
-		
+		"textError": "#00ff00",
+				
 		"startupLoader": "#ffffff",
 
 		"formSubmitButton": "#00aa00",

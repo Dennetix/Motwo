@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Dennetix/Motwo#readme",
   "dependencies": {
+    "autobind-decorator": "^2.1.0",
     "electron": "^1.6.11",
     "mkdirp": "^0.5.1",
     "mobx": "^3.2.2",
@@ -27,7 +28,6 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
-    "underscore": "^1.8.3",
     "validator": "^8.0.0"
   },
   "devDependencies": {
