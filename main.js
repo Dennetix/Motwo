@@ -2,7 +2,7 @@ const path = require('path');
 const electron = require('electron');
 const { app, BrowserWindow } = electron;
 
-const config = require('./app/js/config/config');
+const config = require('./app/js/config');
 
 app.on('ready', () => {
 	let win = new BrowserWindow(config.windowConfig);

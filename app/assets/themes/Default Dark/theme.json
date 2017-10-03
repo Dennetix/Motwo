@@ -1,22 +1,17 @@
 {
 	"files": {
-		"twitchGlitchLogo": "./images/glitchWhite.svg"
+		"windowControlsMinimize": "./icons/windowControls/minimize.svg",
+		"windowControlsMaximize": "./icons/windowControls/maximize.svg",
+		"windowControlsRestore": "./icons/windowControls/restore.svg",
+		"windowControlsClose": "./icons/windowControls/close.svg",
+
+		"sidepanelTopBarChat": "./icons/sidepanelTopBar/chat.svg",
+		"sidepanelTopBarModules": "./icons/sidepanelTopBar/modules.svg",
+		"sidepanelTopBarShop": "./icons/sidepanelTopBar/shop.svg",
+		"sidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg"
 	},
 
 	"values": {
-		"background": "#2D3238",
-
-		"text": "#ffffff",
-		"textError": "#00ff00",
-				
-		"startupLoader": "#ffffff",
-
-		"formSubmitButton": "#00aa00",
-		"formSubmitButtonText": "#ffffff",
-
-		"formInputText": "#000000",
-		"formInputBackground": "#3A414B",
-		"formInputBorderFocused": "#3A414B",
-		"formInputBorderBlurred": "#3A414B"
+		"titlebarBackground": "#333333"
 	}
 }
