@@ -2,10 +2,12 @@ import React from 'react';
 import radium from 'radium';
 import autobind from 'autobind-decorator';
 import settings from '../../../utils/settings';
+import theme from '../../../utils/theme';
 
 import SidepanelTopBar from './sidepanelTopBar';
 
 @settings
+@theme
 @radium
 export default class Sidepanel extends React.Component {
 	constructor(props) {
@@ -13,10 +15,10 @@ export default class Sidepanel extends React.Component {
 
 		this.styles = {
 			sidepanel: {
-				background: '#333333',
 				width: this.props.getSettingsProp('sidepanelWidth'),
-				maxWidth: '50%',
 				height: '100vh',
+				maxWidth: '50%',
+				float: 'left',
 				overflowY: 'hidden'
 			},
 			dragbar: {
@@ -42,7 +44,7 @@ export default class Sidepanel extends React.Component {
 	@autobind
 	onMouseUp() {
 		if(this.mouseDown)	
-			this.props.setSettingsProp({sidepanelWidth: document.getElementById('sidepanel').style.width});
+			this.props.setSettingsProp({sidepanelWidth: document.getElementById('sidepanel').style.width}, false);
 
 		this.mouseDown = false;
 	}
@@ -55,6 +57,8 @@ export default class Sidepanel extends React.Component {
 	}
 
 	render() {
+		this.styles.sidepanel.background = this.props.getThemeProp('sidepanelBackground')
+
 		return (
 			<div style={this.styles.sidepanel} id="sidepanel">
 				<SidepanelTopBar/>

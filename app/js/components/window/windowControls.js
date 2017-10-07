@@ -19,26 +19,27 @@ export default class WindowControls extends React.Component {
 
 		this.styles = {
 			dragbar: {
+				width: '100%',
+				height: '3.5rem',
 				position: 'fixed',
 				top: 0,
 				left: 0,
-				width: '100%',
-				height: '3.5rem',
 				WebkitAppRegion: 'drag',
 				pointerEvents: 'none'
 			},
 			controls: {
-				WebkitAppRegion: 'no-drag',
 				position: 'fixed',
 				top: '14px',
-				right: '12px'
+				right: '12px',
+				WebkitAppRegion: 'no-drag'
 			},
 			icon: {
 				width: '25px',
 				height: '25px',
 				padding: '0 4px',
-				opacity: '0.6',
+				opacity: '0.7',
 				transition: 'opacity 0.15s',
+				pointerEvents: 'visible',
 
 				':hover': {
 					opacity: '1',
@@ -70,9 +71,9 @@ export default class WindowControls extends React.Component {
 		return (
 			<div style={this.styles.dragbar}>
 				<div style={this.styles.controls}>
-					<img key="minimize" src={this.props.getThemeProp('windowControlsMinimize', true)} style={this.styles.icon} onClick={this.onMinimize} />
-					<img key="maximizeRestore" src={remote.getCurrentWindow().isMaximized() ? this.props.getThemeProp('windowControlsRestore', true) : this.props.getThemeProp('windowControlsMaximize', true)} style={this.styles.icon} onClick={this.onMaximizeRestore} />
-					<img key="close" src={this.props.getThemeProp('windowControlsClose', true)} style={this.styles.icon} onClick={this.onClose} />
+					<img key="minimize" src={this.props.getThemeProp('iconWindowControlsMinimize', true)} style={this.styles.icon} onClick={this.onMinimize} />
+					<img key="maximizeRestore" src={remote.getCurrentWindow().isMaximized() ? this.props.getThemeProp('iconWindowControlsRestore', true) : this.props.getThemeProp('iconWindowControlsMaximize', true)} style={this.styles.icon} onClick={this.onMaximizeRestore} />
+					<img key="close" src={this.props.getThemeProp('iconWindowControlsClose', true)} style={this.styles.icon} onClick={this.onClose} />
 				</div>
 			</div>
 		);

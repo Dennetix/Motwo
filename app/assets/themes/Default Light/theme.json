@@ -1,17 +1,20 @@
 {
 	"files": {
-		"windowControlsMinimize": "./icons/windowControls/minimize.svg",
-		"windowControlsMaximize": "./icons/windowControls/maximize.svg",
-		"windowControlsRestore": "./icons/windowControls/restore.svg",
-		"windowControlsClose": "./icons/windowControls/close.svg",
+		"iconWindowControlsMinimize": "./icons/windowControls/minimize.svg",
+		"iconWindowControlsMaximize": "./icons/windowControls/maximize.svg",
+		"iconWindowControlsRestore": "./icons/windowControls/restore.svg",
+		"iconWindowControlsClose": "./icons/windowControls/close.svg",
 
-		"sidepanelTopBarChat": "./icons/sidepanelTopBar/chat.svg",
-		"sidepanelTopBarModules": "./icons/sidepanelTopBar/modules.svg",
-		"sidepanelTopBarShop": "./icons/sidepanelTopBar/shop.svg",
-		"sidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg"
+		"iconSidepanelTopBarChat": "./icons/sidepanelTopBar/chat.svg",
+		"iconSidepanelTopBarModules": "./icons/sidepanelTopBar/modules.svg",
+		"iconSidepanelTopBarShop": "./icons/sidepanelTopBar/shop.svg",
+		"iconSidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg",
+
+		"animationLoader": "./animations/loader.svg" 
 	},
 
 	"values": {
-		"titlebarBackground": "#eeeeee"
+		"background": "#ffffff",
+		"sidepanelBackground": "#eeeef0"
 	}
 }

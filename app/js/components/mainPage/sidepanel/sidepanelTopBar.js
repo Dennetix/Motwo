@@ -30,8 +30,8 @@ export default class SidepanelTopBar extends React.Component {
 			},
 			icon: {
 				width: '100%',
-				height: '2.1rem',
-				margin: '12px auto 10px auto'
+				height: '1.8rem',
+				margin: '15px auto 10px auto'
 			}
 		};
 	}
@@ -39,10 +39,10 @@ export default class SidepanelTopBar extends React.Component {
 	render() {
 		return (
 			<div style={this.styles.topBar}>
-				<div key="tab1" style={this.styles.tab}><img style={this.styles.icon} src={this.props.getThemeProp('sidepanelTopBarChat', true)} /></div>
-				<div key="tab2" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('sidepanelTopBarModules', true)} /></div>
-				<div key="tab3" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('sidepanelTopBarShop', true)} /></div>
-				<div key="tab4" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('sidepanelTopBarSettings', true)} /></div>
+				<div key="tab1" style={this.styles.tab}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarChat', true)} /></div>
+				<div key="tab2" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarModules', true)} /></div>
+				<div key="tab3" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarShop', true)} /></div>
+				<div key="tab4" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarSettings', true)} /></div>
 			</div>
 		);
 	}
