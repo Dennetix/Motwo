@@ -61,12 +61,15 @@ export default WrappedComponent => {
 		constructor(props) {
 			super(props);
 
-			// Force a rerender oft this component when the locale setting have changed in order to rerender the decorated component
-			document.addEventListener('localeChanged', () => {this.forceUpdate()}, false);
+			this.state = {trigger: 0};
+			
+			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
+			document.addEventListener('localeChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
 		}
 
 		render() {
 			let props = {...this.props};
+			props.trigger = this.state.trigger;			
 			props.getLocalizedTranslation = getLocalizedTranslation;
 			props.setLocale = setLocale;
 			return <WrappedComponent {...props} />;

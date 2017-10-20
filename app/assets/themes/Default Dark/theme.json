@@ -1,5 +1,7 @@
 {
 	"files": {
+		"motwoIcon": "./icons/motwoIcon.svg",
+
 		"iconWindowControlsMinimize": "./icons/windowControls/minimize.svg",
 		"iconWindowControlsMaximize": "./icons/windowControls/maximize.svg",
 		"iconWindowControlsRestore": "./icons/windowControls/restore.svg",
@@ -10,11 +12,20 @@
 		"iconSidepanelTopBarShop": "./icons/sidepanelTopBar/shop.svg",
 		"iconSidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg",
 
-		"animationLoader": "./animations/loader.svg" 
+		"animationLoader": "./animations/loader.svg"
 	},
 
 	"values": {
+		"text": "#eeeeee",
+		"errorText": "#ff6666",
 		"background": "#393939",
-		"sidepanelBackground": "#333333"
+
+		"sidepanelBackground": "#333333",
+
+		"formSubmitBackground": "#2c2c2c",
+		"formSubmitColor": "#ffffff",
+
+		"formTextInputBackground": "#444444",
+		"formTextInputColor": "#eeeeee"
 	}
 }

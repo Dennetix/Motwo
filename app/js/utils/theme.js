@@ -70,10 +70,13 @@ export const getThemeProp = (name, isFile = false) => {
 	if(theme) {
 		// The Theme is a custom theme. 
 		// Check if the value or file is set. If not try the same with the default theme
-		if(isFile && (theme.files && theme.files[name]))  
-			return path.join(config.userDataPath, 'themes/', themeName, theme.files[name]);
-		else if(!isFile && (theme.values && theme.values[name]))
+		if(isFile && (theme.files && theme.files[name])) {
+			return path.existsSync(path.join(config.userDataPath, 'themes/', themeName, theme.files[name])) 
+					 ? path.join(config.userDataPath, 'themes/', themeName, theme.files[name])
+					 : getDefaultThemeColor(theme, themeName, name, isFile);
+		} else if(!isFile && (theme.values && theme.values[name])) {
 			return theme.values[name];
+		}
 
 		return getDefaultThemeColor(defaultThemes[theme.defaultTheme], theme.defaultTheme, name, isFile);
 	} else {
@@ -117,12 +120,15 @@ export default WrappedComponent => {
 		constructor(props) {
 			super(props);
 
-			// Force a rerender of this component when the theme has changed in order to rerender the decorated component
-			document.addEventListener('themeChanged', () => {this.forceUpdate()}, false);
+			this.state = {trigger: 0};
+
+			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
+			document.addEventListener('themeChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
 		}
 
 		render() {
 			let props = {...this.props};
+			props.trigger = this.state.trigger;
 			props.getAllThemes = getAllThemes;
 			props.getThemeProp = getThemeProp;
 			props.setTheme = setTheme;

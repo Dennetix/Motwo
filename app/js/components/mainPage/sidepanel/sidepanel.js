@@ -13,12 +13,20 @@ export default class Sidepanel extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.styles = {
+		document.addEventListener('mouseup', this.onMouseUp);
+		document.addEventListener('mousemove', this.onMouseMove);
+	}
+
+	getStyle() {
+		return {
 			sidepanel: {
 				width: this.props.getSettingsProp('sidepanelWidth'),
 				height: '100vh',
 				maxWidth: '50%',
 				float: 'left',
+
+				background: this.props.getThemeProp('sidepanelBackground'),
+
 				overflowY: 'hidden'
 			},
 			dragbar: {
@@ -31,9 +39,6 @@ export default class Sidepanel extends React.Component {
 				}
 			}
 		};
-
-		document.addEventListener('mouseup', this.onMouseUp);
-		document.addEventListener('mousemove', this.onMouseMove);
 	}
 
 	@autobind
@@ -57,12 +62,12 @@ export default class Sidepanel extends React.Component {
 	}
 
 	render() {
-		this.styles.sidepanel.background = this.props.getThemeProp('sidepanelBackground')
+		let style = this.getStyle();
 
 		return (
-			<div style={this.styles.sidepanel} id="sidepanel">
+			<div style={style.sidepanel} id="sidepanel">
 				<SidepanelTopBar/>
-				<div style={this.styles.dragbar} onMouseDown={this.onMouseDown}></div>
+				<div style={style.dragbar} onMouseDown={this.onMouseDown}></div>
 			</div>
 		);
 	}

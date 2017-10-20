@@ -12,7 +12,8 @@ module.exports = {
 		minWidth: 768,
 		minHeight: 500,
 		frame: false,
-		show: false
+		show: false,
+		transparent: false
 	},
 
 	irc: {

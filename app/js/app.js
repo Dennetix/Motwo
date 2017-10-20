@@ -4,8 +4,8 @@ import validator from 'validator';
 import { observer } from 'mobx-react';
 import chat from './utils/chat';
 import utils from './utils/utils';
+import settings from './utils/settings';
 import theme from './utils/theme';
-import { setSettingsProp, getSettingsProp } from './utils/settings';
 
 import WindowControls from './components/window/windowControls';
 import MainPage from './pages/mainPage';
@@ -15,6 +15,7 @@ import LoadingPage from './pages/loadingPage';
 
 import AppStore from './stores/appStore';
 
+@settings
 @theme
 @observer
 class App extends React.Component {
@@ -24,9 +25,17 @@ class App extends React.Component {
 		this.tryLogin();
 	}
 
+	getStyle() {
+		return {
+			height: '100vh',
+			color: this.props.getThemeProp('text'),
+			background: this.props.getThemeProp('background')
+		};
+	}
+
 	tryLogin() {
-		let user = getSettingsProp('login.user');
-		let pass = getSettingsProp('login.pass');
+		let user = this.props.getSettingsProp('login.user');
+		let pass = this.props.getSettingsProp('login.pass');
 		if((utils.isStringAndNotEmpty(user) && utils.isStringAndNotEmpty(pass)) && validator.isBase64(pass)) {
 			user = user.toLowerCase();
 			pass = new Buffer(pass, 'base64').toString('utf-8'); // Convert base64 to utf-8
@@ -35,35 +44,37 @@ class App extends React.Component {
 				pass = 'oauth:' + pass;
 
 			chat.login(user, pass)
-				.then(this.tryJoin)
+				.then(() => {this.tryJoin()})
 				.catch(err => {
-					setSettingsProp({login: undefined}, false);
+					this.props.setSettingsProp({login: {user: undefined, pass: undefined}}, false);
 					AppStore.isLoading = false;
 				})
 		} else {
-			setSettingsProp({login: undefined}, false);
+			this.props.setSettingsProp({login: {user: undefined, pass: undefined}}, false);
 			AppStore.isLoading = false;
 		}
 	}
  
-	tryJoin() {
-		let channel = getSettingsProp('login.channel');
+	tryJoin() {	
+		let channel = this.props.getSettingsProp('login.channel');
 		if(utils.isStringAndNotEmpty(channel)) {			
 			chat.join(channel)
 				.then(() => {
 					AppStore.isLoading = false;
 				})
 				.catch(err => {
-					setSettingsProp({login: {channel: undefined}}, false);
+					this.props.setSettingsProp({login: {channel: undefined}}, false);
 					AppStore.isLoading = false;
 				});
-		} else {
-			setSettingsProp({login: {channel: undefined}}, false);
+		} else {		
+			this.props.setSettingsProp({login: {channel: undefined}}, false);
 			AppStore.isLoading = false;
 		}
 	}
 
 	render() {
+		let style = this.getStyle();
+		
 		let page = <LoginPage />;
 		if(AppStore.isLoading) {
 			page = <LoadingPage />;
@@ -75,7 +86,7 @@ class App extends React.Component {
 		}
 
 		return (
-			<div style={{background: this.props.getThemeProp('background')}}>
+			<div style={style}>
 				<WindowControls />
 
 				{page}

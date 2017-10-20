@@ -5,10 +5,8 @@ import theme from '../../../utils/theme';
 @theme
 @radium
 export default class SidepanelTopBar extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.styles = {
+	getStyle() {
+		return {
 			topBar: {
 				width: '100%',
 				height: '3.5rem',
@@ -37,12 +35,14 @@ export default class SidepanelTopBar extends React.Component {
 	}
 
 	render() {
+		let style = this.getStyle();
+
 		return (
-			<div style={this.styles.topBar}>
-				<div key="tab1" style={this.styles.tab}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarChat', true)} /></div>
-				<div key="tab2" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarModules', true)} /></div>
-				<div key="tab3" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarShop', true)} /></div>
-				<div key="tab4" style={[this.styles.tab, this.styles.tabBorder]}><img style={this.styles.icon} src={this.props.getThemeProp('iconSidepanelTopBarSettings', true)} /></div>
+			<div style={style.topBar}>
+				<div key="tab1" style={style.tab}><img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarChat', true)} /></div>
+				<div key="tab2" style={[style.tab, style.tabBorder]}><img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarModules', true)} /></div>
+				<div key="tab3" style={[style.tab, style.tabBorder]}><img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarShop', true)} /></div>
+				<div key="tab4" style={[style.tab, style.tabBorder]}><img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarSettings', true)} /></div>
 			</div>
 		);
 	}

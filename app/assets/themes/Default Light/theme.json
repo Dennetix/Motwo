@@ -1,5 +1,7 @@
 {
 	"files": {
+		"motwoIcon": "./icons/motwoIcon.svg",
+
 		"iconWindowControlsMinimize": "./icons/windowControls/minimize.svg",
 		"iconWindowControlsMaximize": "./icons/windowControls/maximize.svg",
 		"iconWindowControlsRestore": "./icons/windowControls/restore.svg",
@@ -14,7 +16,16 @@
 	},
 
 	"values": {
+		"text": "#000000",
+		"errorText": "#ee2222",
 		"background": "#ffffff",
-		"sidepanelBackground": "#eeeef0"
+
+		"sidepanelBackground": "#eeeef0",
+
+		"formSubmitBackground": "#444444",
+		"formSubmitColor": "#ffffff",
+
+		"formTextInputBackground": "#eaeaea",
+		"formTextInputColor": "#000000" 
 	}
 }

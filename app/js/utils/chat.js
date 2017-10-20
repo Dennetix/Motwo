@@ -54,7 +54,7 @@ export const login = (user, pass) => {
 	});
 };
 
-export const join = channel => {
+export const join = channel => {	
 	return new Promise((resolve, reject) => {
 		if(!AppStore.isLoggedIn) {
 			console.error('Internal error: Tried to join a channel but not logged in');
@@ -74,7 +74,7 @@ export const join = channel => {
 			if(msg.includes(':' + AppStore.user + '!' + AppStore.user + '@' + AppStore.user + '.tmi.twitch.tv JOIN #' + channel)) {  // Check if the JOIN request succeeded
 				clearTimeout(timeout);								// Delete the timeout
 				socket.removeListener('data', callback);		// Remove this listener
-				AppStore.setChannel(channel);
+				AppStore.setChannel(channel);		
 				resolve();
 			}
 		};

@@ -1,5 +1,14 @@
+@import url('assets/fonts/opensans/opensans.css');
+
 body {
 	user-select: none;
+	cursor: default;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 85%;
+}
+
+b {
+	font-family: 'Open Sans Bold', sans-serif;	
 }
 
 img, a {

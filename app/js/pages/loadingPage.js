@@ -3,10 +3,8 @@ import theme from '../utils/theme';
 
 @theme
 export default class LoginPage extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.styles = {
+	getStyle() {
+		return {
 			container: {
 				width: '100%',
 				height: '100vh'
@@ -21,11 +19,13 @@ export default class LoginPage extends React.Component {
 			}
 		};
 	}
-	
+
 	render() {
+		let style = this.getStyle();
+
 		return (
-			<div style={this.styles.container}>
-				<img style={this.styles.loader} src={this.props.getThemeProp('animationLoader', true)}/>
+			<div style={style.container}>
+				<img style={style.loader} src={this.props.getThemeProp('animationLoader', true)}/>
 			</div>
 		);
 	}

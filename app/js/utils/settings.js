@@ -16,7 +16,7 @@ if(fs.existsSync(path.join(config.userDataPath, 'settings.json'))) {
 	settings = file ? utils.mergeObjects(settings, JSON.parse(file)) : settings; // Merge user settings with default settings
 }
 
-export const getSettingsProp = (prop: String) => {
+export const getSettingsProp = (prop) => {
 	prop = prop.replace(/\[(\w+)\]/g, '.$1');  // Convert indices to properties
 	let props = prop.split('.');
 	let res = settings;
@@ -52,13 +52,16 @@ export default WrappedComponent => {
 	return class extends React.Component {
 		constructor(props) {
 			super(props);
+
+			this.state = {trigger: 0};
 			
-			// Force a rerender of this component when the setting have changed in order to rerender the decorated component
-			document.addEventListener('settingsChanged', () => {this.forceUpdate()}, false);
+			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
+			document.addEventListener('settingsChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
 		}
 
 		render() {
 			let props = {...this.props};
+			props.trigger = this.state.trigger;
 			props.getSettingsProp = getSettingsProp;
 			props.setSettingsProp = setSettingsProp;
 			return <WrappedComponent {...props} />;

@@ -1,16 +1,12 @@
 import React from 'react';
 import radium from 'radium';
-import { getSettingsProp } from '../utils/settings';
-import { getAllThemes, setTheme } from '../utils/theme';
 
 import Sidepanel from '../components/mainPage/sidepanel/sidepanel';
 
 @radium
 export default class MainPage extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.styles = {
+	getStyle() {
+		return {
 			mainPage: {
 				height: '100vh'
 			}
@@ -18,8 +14,10 @@ export default class MainPage extends React.Component {
 	}
 
 	render() {
+		let style = this.getStyle();
+
 		return (
-			<div style={this.styles.mainPage}>
+			<div style={style.mainPage}>
 				<Sidepanel />
 			</div>
 		);

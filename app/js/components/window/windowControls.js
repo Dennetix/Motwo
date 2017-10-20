@@ -2,7 +2,6 @@ import React from 'react';
 import autobind from 'autobind-decorator';
 import radium from 'radium';
 import { remote } from 'electron'
-
 import theme from '../../utils/theme';
 
 @theme
@@ -14,10 +13,12 @@ export default class WindowControls extends React.Component {
 		remote.getCurrentWindow().removeAllListeners('maximize');
 		remote.getCurrentWindow().removeAllListeners('unmaximize');
 
-		remote.getCurrentWindow().on('maximize', this.forceUpdate.bind(this));
-		remote.getCurrentWindow().on('unmaximize', this.forceUpdate.bind(this));
+		remote.getCurrentWindow().on('maximize', () => {this.forceUpdate()});
+		remote.getCurrentWindow().on('unmaximize', () => {this.forceUpdate()});
+	}
 
-		this.styles = {
+	getStyle() {
+		return {
 			dragbar: {
 				width: '100%',
 				height: '3.5rem',
@@ -46,7 +47,7 @@ export default class WindowControls extends React.Component {
 					cursor: 'pointer'
 				}
 			}
-		}
+		};
 	}
 
 	@autobind
@@ -68,12 +69,14 @@ export default class WindowControls extends React.Component {
 	}
 
 	render() {
+		let style = this.getStyle();
+
 		return (
-			<div style={this.styles.dragbar}>
-				<div style={this.styles.controls}>
-					<img key="minimize" src={this.props.getThemeProp('iconWindowControlsMinimize', true)} style={this.styles.icon} onClick={this.onMinimize} />
-					<img key="maximizeRestore" src={remote.getCurrentWindow().isMaximized() ? this.props.getThemeProp('iconWindowControlsRestore', true) : this.props.getThemeProp('iconWindowControlsMaximize', true)} style={this.styles.icon} onClick={this.onMaximizeRestore} />
-					<img key="close" src={this.props.getThemeProp('iconWindowControlsClose', true)} style={this.styles.icon} onClick={this.onClose} />
+			<div style={style.dragbar}>
+				<div style={style.controls}>
+					<img key="minimize" src={this.props.getThemeProp('iconWindowControlsMinimize', true)} style={style.icon} onClick={this.onMinimize} />
+					<img key="maximizeRestore" src={remote.getCurrentWindow().isMaximized() ? this.props.getThemeProp('iconWindowControlsRestore', true) : this.props.getThemeProp('iconWindowControlsMaximize', true)} style={style.icon} onClick={this.onMaximizeRestore} />
+					<img key="close" src={this.props.getThemeProp('iconWindowControlsClose', true)} style={style.icon} onClick={this.onClose} />
 				</div>
 			</div>
 		);
