@@ -9,13 +9,11 @@
 	"username": ["Username"],
 	"password": ["OAuth Password"],
 	"getOauth": ["Get your OAuth Password", "here"],
-	"rememberLogin": ["Remember login credentials"],
 	"loginButton": ["Login"],
 	"authFailed": ["Username or password incorrect"],
 
 	"joinNotice": ["Join the channel in which you want your bot to operate"],
 	"channel": ["Channel"],
-	"rememberChannel": ["Remember channel"],
 	"joinButton": ["Join"],
 	"invalidChannel": ["This channel doesn't exist or was banned"]
 }

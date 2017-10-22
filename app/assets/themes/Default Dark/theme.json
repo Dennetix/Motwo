@@ -8,17 +8,20 @@
 		"iconWindowControlsClose": "./icons/windowControls/close.svg",
 
 		"iconSidepanelTopBarChat": "./icons/sidepanelTopBar/chat.svg",
+		"iconSidepanelTopBarUserList": "./icons/sidepanelTopBar/userlist.svg",
 		"iconSidepanelTopBarModules": "./icons/sidepanelTopBar/modules.svg",
-		"iconSidepanelTopBarShop": "./icons/sidepanelTopBar/shop.svg",
 		"iconSidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg",
 
 		"animationLoader": "./animations/loader.svg"
 	},
 
 	"values": {
+		"background": "#393939",
+
 		"text": "#eeeeee",
 		"errorText": "#ff6666",
-		"background": "#393939",
+
+		"anchorText": "#999999",
 
 		"sidepanelBackground": "#333333",
 

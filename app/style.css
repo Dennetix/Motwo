@@ -11,6 +11,6 @@ b {
 	font-family: 'Open Sans Bold', sans-serif;	
 }
 
-img, a {
+img {
 	pointer-events: none
 }
