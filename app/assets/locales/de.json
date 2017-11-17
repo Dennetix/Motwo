@@ -14,6 +14,11 @@
 
 	"joinNotice": ["Verbinde dich mit dem Kanal, in dem du deinen Bot betreiben willst"],
 	"channel": ["Kanal"],
-	"joinButton": ["Verbinden"],
-	"invalidChannel": ["Dieser Kanal existiert nicht oder wurde gebannt"]
+	"joinButton": ["Kanal beitreten"],
+	"invalidChannel": ["Dieser Kanal existiert nicht oder wurde gebannt"],
+
+	"welcomeMessage": ["Hallo,", "passe hier die letzten Einstellungen an um fort zu fahren."],
+	"language": ["Sprache"],
+	"theme": ["Aussehen"],
+	"continueButton": ["Los geht's !"]
 }

@@ -9,8 +9,8 @@ module.exports = {
 	windowConfig: {
 		width: 1280,
 		height: 720,
-		minWidth: 768,
-		minHeight: 500,
+		minWidth: 960,
+		minHeight: 570,
 		frame: false,
 		show: false,
 		transparent: false
@@ -20,5 +20,9 @@ module.exports = {
 		host: 'irc.chat.twitch.tv',
 		port: 6667, 
 		joinReqTimeout: 1500
+	},
+
+	sidepanel: {
+		minSidepanelWidth: 300
 	}
 };

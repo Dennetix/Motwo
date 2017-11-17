@@ -128,7 +128,7 @@ export default WrappedComponent => {
 
 		render() {
 			let props = {...this.props};
-			props.trigger = this.state.trigger;
+			props.themeTrigger = this.state.trigger;
 			props.getAllThemes = getAllThemes;
 			props.getThemeProp = getThemeProp;
 			props.setTheme = setTheme;

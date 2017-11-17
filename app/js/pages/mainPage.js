@@ -1,6 +1,8 @@
 import React from 'react';
 import radium from 'radium';
 
+import { remote } from 'electron';
+
 import Sidepanel from '../components/mainPage/sidepanel/sidepanel';
 
 @radium

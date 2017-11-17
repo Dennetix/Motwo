@@ -8,7 +8,7 @@ import settings from '../utils/settings'
 
 import FormMessage from '../components/form/formMessage'
 import FormTextInput from '../components/form/formTextInput';
-import FormSubmitInput from '../components/form/formSubmitInput';
+import FormSubmitButton from '../components/form/formSubmitButton';
 
 import AppStore from '../stores/appStore';
 
@@ -73,7 +73,7 @@ export default class JoinPage extends React.Component {
 					}
 					<FormTextInput placeholder={this.props.getLocalizedTranslation('channel')} />
 
-					<FormSubmitInput />
+					<FormSubmitButton value={this.props.getLocalizedTranslation('joinButton')} />
 				</form>
 			</div>
 		);

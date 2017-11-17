@@ -1,7 +1,7 @@
 {
 	"noTranslation": ["No translation available"],
 
-	"internalError": ["An error occurred"],
+	"internalError": ["A wild error appeared!"],
 
 	"formNotFilled": ["Please fill in all fields"],
 	
@@ -14,6 +14,11 @@
 
 	"joinNotice": ["Join the channel in which you want your bot to operate"],
 	"channel": ["Channel"],
-	"joinButton": ["Join"],
-	"invalidChannel": ["This channel doesn't exist or was banned"]
+	"joinButton": ["Join channel"],
+	"invalidChannel": ["This channel doesn't exist or was banned"],
+
+	"welcomeMessage": ["Hello,", "adjust the last few settings here to continue."],
+	"language": ["Language"],
+	"theme": ["Theme"],
+	"continueButton": ["Let's go !"]
 }

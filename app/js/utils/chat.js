@@ -4,10 +4,12 @@ import { getLocalizedTranslation } from './locale';
 
 import AppStore from '../stores/appStore';
 
-let socket = new net.Socket();
+export let socket = new net.Socket();
 
 socket.on('data', data => {
 	const msg = data.toString();
+
+	console.log(msg);
 
 	if(msg.startsWith('PING'))
 		socket.write('PONG\r\n');
@@ -31,12 +33,12 @@ export const login = (user, pass) => {
 				const msg = data.toString();
 	
 				if(msg.match(/:tmi\.twitch\.tv\s376\s\w+\s:>/i)) {		// Check if authentication succeeded 
-					socket.write('CAP REQ :twitch.tv/tags\r\n');			// Reqest tag features for additional message information
+					socket.write('CAP REQ :twitch.tv/tags\r\n');		// Reqest tag features for additional message information
 					socket.write('CAP REQ :twitch.tv/commands\r\n');	// Reqest command features for several twitch commands
-					socket.removeListener('data', callback);				// Remove this listener
+					socket.removeListener('data', callback);			// Remove this listener
 	
 					let oauthUser = msg.split(' ')[2];
-					if(user === oauthUser) {									// Check if the username corresponds to the username of the oauth token
+					if(user === oauthUser) {							// Check if the username corresponds to the username of the oauth token
 						AppStore.setLogin(user, pass);
 						resolve();
 					} else {
@@ -44,7 +46,7 @@ export const login = (user, pass) => {
 						reject(getLocalizedTranslation('authFailed'));
 					}
 				} else if(msg.includes(':tmi.twitch.tv NOTICE * :Login authentication failed') || msg.includes(':tmi.twitch.tv NOTICE * :Invalid NICK')) {	// Check if authentication failed
-					socket.removeListener('data', callback);				// Remove this listener
+					socket.removeListener('data', callback);			// Remove this listener
 					AppStore.setLogin(null);
 					reject(getLocalizedTranslation('authFailed'));
 				}
@@ -72,15 +74,15 @@ export const join = channel => {
 			let msg = data.toString();
 
 			if(msg.includes(':' + AppStore.user + '!' + AppStore.user + '@' + AppStore.user + '.tmi.twitch.tv JOIN #' + channel)) {  // Check if the JOIN request succeeded
-				clearTimeout(timeout);								// Delete the timeout
-				socket.removeListener('data', callback);		// Remove this listener
+				clearTimeout(timeout);						// Delete the timeout
+				socket.removeListener('data', callback);	// Remove this listener
 				AppStore.setChannel(channel);		
 				resolve();
 			}
 		};
 
-		timeout = setTimeout(() => { 								// The IRC server doesn't respond to invalid JOIN requests so there has to be a timeout
-			socket.removeListener('data', callback);			// Remove the listener
+		timeout = setTimeout(() => { 						// The IRC server doesn't respond to invalid JOIN requests so there has to be a timeout
+			socket.removeListener('data', callback);		// Remove the listener
 			AppStore.setChannel(null);
 			reject(getLocalizedTranslation('invalidChannel'));
 		}, config.irc.joinReqTimeout);
@@ -89,4 +91,4 @@ export const join = channel => {
 	}); 
 };
 
-export default { login, join };
+export default { socket, login, join };

@@ -12,6 +12,7 @@ import MainPage from './pages/mainPage';
 import JoinPage from './pages/joinPage';
 import LoginPage from './pages/loginPage';
 import LoadingPage from './pages/loadingPage';
+import WelcomePage from './pages/welcomePage';
 
 import AppStore from './stores/appStore';
 
@@ -79,10 +80,14 @@ class App extends React.Component {
 		if(AppStore.isLoading) {
 			page = <LoadingPage />;
 		} else {
-			if(AppStore.isLoggedIn && AppStore.hasJoined)
-				page = <MainPage />;
-			else if(AppStore.isLoggedIn) 
+			if(AppStore.isLoggedIn && AppStore.hasJoined) {
+				if(this.props.getSettingsProp('firstStart'))
+					page = <WelcomePage />;
+				else
+					page = <MainPage />;
+			} else if(AppStore.isLoggedIn) {
 				page = <JoinPage />;
+			}
 		}
 
 		return (

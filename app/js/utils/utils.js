@@ -41,4 +41,8 @@ export const isStringAndNotEmpty = str => {
 	return false;
 }
 
+export const splitAt = (str, index) => {
+	return [str.slice(0, index), str.slice(index)];
+}
+
 export default { extend, mergeObjects, isDefined, isStringAndNotEmpty };

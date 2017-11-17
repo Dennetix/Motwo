@@ -6,9 +6,13 @@ import config from '../config';
 import utils from '../utils/utils';
 
 let settings = { // Initialize with default settings
+	firstStart: true,
+
 	locale: 'en',
-	theme: 'Default Light',
-	sidepanelWidth: '300px'
+	theme: 'Default Dark',
+	sidepanelWidth: '300px',
+	
+	maxChatMessages: 200
 };
 
 if(fs.existsSync(path.join(config.userDataPath, 'settings.json'))) {
@@ -61,7 +65,7 @@ export default WrappedComponent => {
 
 		render() {
 			let props = {...this.props};
-			props.trigger = this.state.trigger;
+			props.settingsTrigger = this.state.trigger;
 			props.getSettingsProp = getSettingsProp;
 			props.setSettingsProp = setSettingsProp;
 			return <WrappedComponent {...props} />;

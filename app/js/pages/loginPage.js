@@ -8,7 +8,7 @@ import settings from '../utils/settings';
 
 import FormMessage from '../components/form/formMessage'
 import FormTextInput from '../components/form/formTextInput';
-import FormSubmitInput from '../components/form/formSubmitInput';
+import FormSubmitButton from '../components/form/formSubmitButton';
 import ExternalLink from '../components/utils/externalLink';
 
 import AppStore from '../stores/appStore';
@@ -27,7 +27,7 @@ export default class LoginPage extends React.Component {
 				position: 'absolute',
 				left: '50%',
 				top: '50%',
-				transform: 'translate(-50%, -5%)'
+				transform: 'translate(-50%, -15%)'
 			}
 		};
 	}
@@ -80,7 +80,7 @@ export default class LoginPage extends React.Component {
 					<FormTextInput placeholder={this.props.getLocalizedTranslation('password')} type="password" />
 					<FormMessage>{this.props.getLocalizedTranslation('getOauth', 0)} <ExternalLink href="http://twitchapps.com/tmi">{this.props.getLocalizedTranslation('getOauth', 1)}</ExternalLink></FormMessage>
 
-					<FormSubmitInput />
+					<FormSubmitButton value={this.props.getLocalizedTranslation('loginButton')} />
 				</form>
 			</div>
 		);

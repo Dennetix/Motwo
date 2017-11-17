@@ -23,7 +23,7 @@ export default class WindowControls extends React.Component {
 				width: '100%',
 				height: '3.5rem',
 				position: 'fixed',
-				top: 0,
+				top: 1,
 				left: 0,
 				WebkitAppRegion: 'drag',
 				pointerEvents: 'none'

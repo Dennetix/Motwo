@@ -18,12 +18,16 @@
 	"values": {
 		"background": "#ffffff",
 
+		"accent": "#2c90e0",
+
 		"text": "#000000",
 		"errorText": "#ee2222",
 
 		"anchorText": "#3295e5",
 
 		"sidepanelBackground": "#eeeef0",
+
+		"formActive": "#2c90f0",
 
 		"formSubmitBackground": "#444444",
 		"formSubmitColor": "#ffffff",

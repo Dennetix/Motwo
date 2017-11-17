@@ -69,7 +69,7 @@ export default WrappedComponent => {
 
 		render() {
 			let props = {...this.props};
-			props.trigger = this.state.trigger;			
+			props.localeTrigger = this.state.trigger;			
 			props.getLocalizedTranslation = getLocalizedTranslation;
 			props.setLocale = setLocale;
 			return <WrappedComponent {...props} />;
