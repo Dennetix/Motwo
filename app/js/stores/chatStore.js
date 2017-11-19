@@ -6,8 +6,8 @@ import { getThemeProp } from '../utils/theme';
 
 import utils from '../utils/utils';
 
-import ChatMessage from '../components/mainPage/sidepanel/tabs/chat/chatMessage';
-import ChatMessageEmote from '../components/mainPage/sidepanel/tabs/chat/chatMessageEmote';
+import ChatMessage from '../components/mainPage/sidepanel/tabs/chat/chatTabMessage';
+import ChatMessageEmote from '../components/mainPage/sidepanel/tabs/chat/chatTabMessageEmote';
 
 class ChatStore {
 	@observable messages = [];

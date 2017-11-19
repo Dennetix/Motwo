@@ -6,7 +6,7 @@ import chat from '../../../../../utils/chat';
 import ChatStore from '../../../../../stores/chatStore';
 
 @observer
-export default class ChatSidepanelTab extends React.Component {
+export default class ChatTab extends React.Component {
 	constructor(props) {
 		super(props);
 

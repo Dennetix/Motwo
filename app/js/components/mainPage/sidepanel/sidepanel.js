@@ -8,10 +8,10 @@ import { setSettingsProp } from '../../../utils/settings';
 
 import SidepanelTopBar from './sidepanelTopBar';
 
-import ChatSidepanelTab from './tabs/chat/chatSidepanelTab';
-import UserListSidepanelTab from './tabs/userListSidepanelTab';
-import ModulesSidepanelTab from './tabs/modulesSidepanelTab';
-import SettingsSidepanelTab from './tabs/settingsSidepanelTab';
+import ChatSidepanelTab from './tabs/chat/chatTab';
+import UserListSidepanelTab from './tabs/userList/userListTab';
+import ModulesSidepanelTab from './tabs/modules/modulesTab';
+import SettingsSidepanelTab from './tabs/settings/settingsTab';
 
 import SidepanelStore from '../../../stores/sidepanelStore';
 import { SidepanelTabs } from '../../../stores/sidepanelStore';

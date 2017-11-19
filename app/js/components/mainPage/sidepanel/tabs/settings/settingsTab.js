@@ -1,11 +1,11 @@
 import React from 'react';
 import radium from 'radium';
 import autobind from 'autobind-decorator';
-import theme from '../../../../utils/theme';
+import theme from '../../../../../utils/theme';
 
 @theme
 @radium
-export default class UserListSidepanelTab extends React.Component {
+export default class SettingsSidepanelTab extends React.Component {
 	getStyle() {
 		return {
 			container: {
@@ -20,7 +20,7 @@ export default class UserListSidepanelTab extends React.Component {
 		
 		return (
 			<div style={style.container}>
-				<h1>UserList</h1>
+				<h1>Settings</h1>
 			</div>
 		);
 	}

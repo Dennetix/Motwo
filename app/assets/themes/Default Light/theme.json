@@ -2,6 +2,8 @@
 	"files": {
 		"motwoIcon": "./icons/motwoIcon.svg",
 
+		"animationLoader": "./animations/loader.svg",
+
 		"iconWindowControlsMinimize": "./icons/windowControls/minimize.svg",
 		"iconWindowControlsMaximize": "./icons/windowControls/maximize.svg",
 		"iconWindowControlsRestore": "./icons/windowControls/restore.svg",
@@ -12,7 +14,14 @@
 		"iconSidepanelTopBarModules": "./icons/sidepanelTopBar/modules.svg",
 		"iconSidepanelTopBarSettings": "./icons/sidepanelTopBar/settings.svg",
 
-		"animationLoader": "./animations/loader.svg" 
+		"badgeAdmin": "./icons/chatBadges/admin.png",
+		"badgeBroadcaster": "./icons/chatBadges/broadcaster.png",
+		"badgeGlobalMod": "./icons/chatBadges/global_mod.png",
+		"badgeModerator": "./icons/chatBadges/moderator.png",
+		"badgePrime": "./icons/chatBadges/prime.png",
+		"badgeStaff": "./icons/chatBadges/staff.png",
+		"badgeTurbo": "./icons/chatBadges/turbo.png",
+		"badgeVerified": "./icons/chatBadges/verified.png"
 	},
 
 	"values": {

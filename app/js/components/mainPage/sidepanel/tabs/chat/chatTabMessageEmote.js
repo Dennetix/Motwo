@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ChatMessageEmote extends React.Component {
+export default class ChatTabMessageEmote extends React.Component {
 	getStyle() {
 		return {
 			width: '2em',
