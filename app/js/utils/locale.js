@@ -1,4 +1,5 @@
 import React from 'react';
+import autobind from 'autobind-decorator';
 import { setSettingsProp, getSettingsProp } from './settings';
 
 const locales = {
@@ -11,11 +12,11 @@ export const getAllLocales = () => {
 }
 
 export const getLocalizedTranslation = (name, index) => {
-	let locale = locales[getSettingsProp('locale')];
+	let locale = locales[getSettingsProp('appearance.locale')];
 	if(!locale) {
 		console.warn('Wrong locale setting in settings.json. Using "en"');
 		console.log('hell');
-		setSettingsProp({locale: 'en'}, false);
+		setSettingsProp({appearance: {locale: 'en'}}, false);
 		console.log('hdsa');
 		locale = locales.en;
 	}
@@ -39,10 +40,10 @@ export const getLocalizedTranslation = (name, index) => {
 export const setLocale = (locale, triggerUpdate = true) => {
 	// Check if the locale exists. If not use english
 	if(locales[locale]) {
-		setSettingsProp({locale: locale}, false);
+		setSettingsProp({appearance: {locale}}, false);
 	} else {
 		console.error('Internal Error: Tried to set a non existing locale. Using "en"');
-		setSettingsProp({locale: 'en'}, false);
+		setSettingsProp({appearance: {locale: 'en'}}, false);
 	}
 
 	if(triggerUpdate) {
@@ -64,7 +65,16 @@ export default WrappedComponent => {
 			this.state = {trigger: 0};
 			
 			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
-			document.addEventListener('localeChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
+			document.addEventListener('localeChanged', this.onLocaleChanged, false);
+		}
+
+		@autobind
+		onLocaleChanged() {
+			this.setState({trigger: this.state.trigger + 1});
+		}
+
+		componentWillUnmount() {
+			document.removeEventListener('localeChanged', this.onLocaleChanged, false);
 		}
 
 		render() {

@@ -7,12 +7,6 @@ import ChatStore from '../../../../../stores/chatStore';
 
 @observer
 export default class ChatTab extends React.Component {
-	constructor(props) {
-		super(props);
-
-		chat.socket.on('data', this.onData);
-	}
-
 	getStyle() {
 		return {
 			container: {
@@ -24,15 +18,6 @@ export default class ChatTab extends React.Component {
 		};
 	}
 
-	@autobind
-	onData(data) {
-		const msg = data.toString();
-		msg.split('\r\n').map(m => {
-			if(m.includes('PRIVMSG'))
-				ChatStore.addMessage(m);
-		});
-	}
-
 	render() {
 		let style = this.getStyle();
 
@@ -42,6 +27,6 @@ export default class ChatTab extends React.Component {
 					{ ChatStore.messages } 
 				</div>
 			</div>
-		);
+		)
 	}
 };

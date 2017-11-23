@@ -10,7 +10,7 @@ export const SidepanelTabs = {
 
 class SidepanelStore {
 	@observable currentTab = SidepanelTabs.CHAT;
-	@observable sidepanelWidth = getSettingsProp('sidepanelWidth');
+	@observable sidepanelWidth = getSettingsProp('appearance.sidepanelWidth');
 }
 
 export default new SidepanelStore();

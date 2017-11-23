@@ -22,7 +22,11 @@ module.exports = {
 		joinReqTimeout: 1500
 	},
 
-	sidepanel: {
+	appearance: {
 		minSidepanelWidth: 300
+	},
+
+	chat: {
+		maxChatMessages: 200
 	}
 };

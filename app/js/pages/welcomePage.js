@@ -63,13 +63,13 @@ export default class WelcomePage extends React.Component {
 				</div>
 				<div style={style.settings}>
 					<FormLabel>{this.props.getLocalizedTranslation('language')}</FormLabel>
-					<FormSelectInput value={this.props.getSettingsProp('locale')} onChange={this.onLocaleChange}>
+					<FormSelectInput value={this.props.getSettingsProp('appearance.locale')} onChange={this.onLocaleChange}>
 						<FormSelectOption value="en">English</FormSelectOption>
 						<FormSelectOption value="de">Deutsch</FormSelectOption>
 					</FormSelectInput>
 
 					<FormLabel>{this.props.getLocalizedTranslation('theme')}</FormLabel>
-					<FormSelectInput value={this.props.getSettingsProp('theme')} onChange={this.onThemeChange}>
+					<FormSelectInput value={this.props.getSettingsProp('appearance.theme')} onChange={this.onThemeChange}>
 						{Object.keys(this.props.getAllThemes()).map((theme, key) => {
 							return <FormSelectOption key={key} value={theme}>{theme}</FormSelectOption>
 						})}

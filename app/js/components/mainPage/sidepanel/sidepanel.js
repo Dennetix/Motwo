@@ -8,10 +8,10 @@ import { setSettingsProp } from '../../../utils/settings';
 
 import SidepanelTopBar from './sidepanelTopBar';
 
-import ChatSidepanelTab from './tabs/chat/chatTab';
-import UserListSidepanelTab from './tabs/userList/userListTab';
-import ModulesSidepanelTab from './tabs/modules/modulesTab';
-import SettingsSidepanelTab from './tabs/settings/settingsTab';
+import ChatTab from './tabs/chat/chatTab';
+import UserListTab from './tabs/userList/userListTab';
+import ModulesTab from './tabs/modules/modulesTab';
+import SettingsTab from './tabs/settings/settingsTab';
 
 import SidepanelStore from '../../../stores/sidepanelStore';
 import { SidepanelTabs } from '../../../stores/sidepanelStore';
@@ -65,7 +65,7 @@ export default class Sidepanel extends React.Component {
 	onMouseUp() {
 		if(this.mouseDown) {
 			setSettingsProp({
-				sidepanelWidth: parseInt(document.getElementById('sidepanel').style.width.split('px')[0])
+				appearance: {sidepanelWidth: parseInt(document.getElementById('sidepanel').style.width.split('px')[0])}
 			}, false);
 		}
 
@@ -74,7 +74,7 @@ export default class Sidepanel extends React.Component {
 
 	@autobind
 	onMouseMove(e) {
-		if(this.mouseDown && (e.pageX > config.sidepanel.minSidepanelWidth && e.pageX < (window.innerWidth / 2))) {
+		if(this.mouseDown && (e.pageX > config.appearance.minSidepanelWidth && e.pageX < (window.innerWidth / 2))) {
 			document.getElementById('sidepanel').style.width = e.pageX + 'px';
 			SidepanelStore.sidepanelWidth = e.pageX;
 		}
@@ -83,21 +83,24 @@ export default class Sidepanel extends React.Component {
 	render() {
 		let style = this.getStyle();
 
-		let chatStyle = { display: SidepanelStore.currentTab === SidepanelTabs.CHAT ? 'block' : 'none' };
-		let userListStyle = { display: SidepanelStore.currentTab === SidepanelTabs.USER_LIST ? 'block' : 'none' };
-		let modulesStyle = { display: SidepanelStore.currentTab === SidepanelTabs.MODULES ? 'block' : 'none' };
-		let settingsStyle = { display: SidepanelStore.currentTab === SidepanelTabs.SETTINGS ? 'block' : 'none' };
-
 		return (
 			<div style={style.sidepanel} id="sidepanel">
 				<SidepanelTopBar/>
 				<div style={style.dragbar} id="dragbar" onMouseDown={this.onMouseDown}></div>
 
 				<div style={style.tabs}>
-					<div style={chatStyle}><ChatSidepanelTab /></div>
-					<div style={userListStyle}><UserListSidepanelTab /></div>
-					<div style={modulesStyle}><ModulesSidepanelTab /></div>
-					<div style={settingsStyle}><SettingsSidepanelTab /></div>
+					{ (() => {
+						switch(SidepanelStore.currentTab) {
+							case SidepanelTabs.CHAT:
+								return <ChatTab />;
+							case SidepanelTabs.USER_LIST:
+								return <UserListTab />;
+							case SidepanelTabs.MODULES: 
+								return <ModulesTab />;
+							case SidepanelTabs.SETTINGS: 
+								return <SettingsTab />;
+						};
+					})() }
 				</div>
 			</div>
 		);

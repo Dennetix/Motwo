@@ -1,4 +1,5 @@
 import React from 'react';
+import autobind from 'autobind-decorator';
 import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
@@ -64,7 +65,7 @@ export const getThemeProp = (name, isFile = false) => {
 	if(!customThemes)
 		loadCustomThemes();
 
-	let themeName = getSettingsProp('theme');
+	let themeName = getSettingsProp('appearance.theme');
 
 	let theme = customThemes[themeName];
 	if(theme) {
@@ -83,7 +84,7 @@ export const getThemeProp = (name, isFile = false) => {
 		// Check if the theme is default theme. If not change the theme settings to Default Light
 		if(!(theme = defaultThemes[themeName])) {
 			console.warn('Wrong theme setting in settings.json. Using "Default Light"');
-			setSettingsProp({theme: 'Default Light'}, false);
+			setSettingsProp({appearance: {theme: 'Default Light'}}, false);
 			theme = defaultThemes['Default Light'];
 		}
 
@@ -98,10 +99,10 @@ export const setTheme = (themeName, triggerUpdate = true) => {
 	
 	// Check if the theme exists. If not use Default Light
 	if(defaultThemes[themeName] || customThemes[themeName]) {
-		setSettingsProp({theme: themeName}, false);
+		setSettingsProp({appearance: {theme: themeName}}, false);
 	} else {
 		console.error('Internal Error: Tried to set a non existing theme. Using "Default Light"');
-		setSettingsProp({theme: 'Default Light'}, false);
+		setSettingsProp({appearance: {theme: 'Default Light'}}, false);
 	}
 
 	if(triggerUpdate) {
@@ -123,7 +124,16 @@ export default WrappedComponent => {
 			this.state = {trigger: 0};
 
 			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
-			document.addEventListener('themeChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
+			document.addEventListener('themeChanged', this.onThemeChanged, false);
+		}
+
+		@autobind
+		onThemeChanged() {
+			this.setState({trigger: this.state.trigger + 1});
+		}
+
+		componentWillUnmount() {
+			document.removeEventListener('themeChanged', this.onThemeChanged, false);
 		}
 
 		render() {

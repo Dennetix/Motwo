@@ -3,6 +3,7 @@ import config from '../config';
 import { getLocalizedTranslation } from './locale';
 
 import AppStore from '../stores/appStore';
+import ChatStore from '../stores/chatStore';
 
 export let socket = new net.Socket();
 
@@ -11,8 +12,12 @@ socket.on('data', data => {
 
 	console.log(msg);
 
-	if(msg.startsWith('PING'))
-		socket.write('PONG\r\n');
+	msg.split('\r\n').map(m => {
+		if(m.startsWith('PING'))
+			socket.write('PONG\r\n');
+		else if(m.includes('PRIVMSG'))
+			ChatStore.addMessage(m);
+	});
 });
 
 socket.on('error', err => {

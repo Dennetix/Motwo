@@ -1,4 +1,5 @@
 import React from 'react';
+import autobind from 'autobind-decorator';
 import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
@@ -8,11 +9,15 @@ import utils from '../utils/utils';
 let settings = { // Initialize with default settings
 	firstStart: true,
 
-	locale: 'en',
-	theme: 'Default Dark',
-	sidepanelWidth: '300px',
+	appearance: {
+		locale: 'en',
+		theme: 'Default Dark',
+		sidepanelWidth: 300
+	},
 	
-	maxChatMessages: 200
+	chat: {
+		maxChatMessages: 100
+	}
 };
 
 if(fs.existsSync(path.join(config.userDataPath, 'settings.json'))) {
@@ -60,7 +65,16 @@ export default WrappedComponent => {
 			this.state = {trigger: 0};
 			
 			// Trigger a rerender of this component and change the props for the WrappedComponent to ensure that it also rerenders
-			document.addEventListener('settingsChanged', () => {this.setState({trigger: this.state.trigger + 1})}, false);
+			document.addEventListener('settingsChanged', this.onSettingsChanged, false);
+		}
+
+		@autobind
+		onSettingsChanged() {
+			this.setState({trigger: this.state.trigger + 1});
+		}
+
+		componentWillUnmount() {
+			document.removeEventListener('settingsChanged', this.onSettingsChanged, false);
 		}
 
 		render() {

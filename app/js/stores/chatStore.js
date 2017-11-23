@@ -79,7 +79,7 @@ class ChatStore {
 		});
 
 		// Delete oldest message if the length of the messages reached the max
-		if(this.messages.length >= getSettingsProp('maxChatMessages'))
+		if(this.messages.length >= getSettingsProp('chat.maxChatMessages'))
 			this.messages.shift();
 
 		// Push back new message
