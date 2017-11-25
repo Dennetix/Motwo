@@ -5,8 +5,8 @@ import settings from '../utils/settings';
 import theme from '../utils/theme';
 
 import FormLabel from '../components/form/formLabel';
-import FormSelectInput from '../components/form/formSelectInput';
-import FormSelectOption from '../components/form/formSelectOption';
+import FormDropdownInput from '../components/form/formDropdownInput';
+import FormDropdownOption from '../components/form/formDropdownOption';
 import FormButton from '../components/form/formButton';
 
 @locale
@@ -38,13 +38,13 @@ export default class WelcomePage extends React.Component {
 	}
 
 	@autobind
-	onLocaleChange(e) {
-		this.props.setLocale(e.target.options[e.target.selectedIndex].value);
+	onLocaleChange(option) {
+		this.props.setLocale(option.props.value);
 	}
 
 	@autobind
-	onThemeChange(e) {
-		this.props.setTheme(e.target.options[e.target.selectedIndex].value);
+	onThemeChange(option) {
+		this.props.setTheme(option.props.value);
 	}
 
 	@autobind
@@ -63,17 +63,17 @@ export default class WelcomePage extends React.Component {
 				</div>
 				<div style={style.settings}>
 					<FormLabel>{this.props.getLocalizedTranslation('language')}</FormLabel>
-					<FormSelectInput value={this.props.getSettingsProp('appearance.locale')} onChange={this.onLocaleChange}>
-						<FormSelectOption value="en">English</FormSelectOption>
-						<FormSelectOption value="de">Deutsch</FormSelectOption>
-					</FormSelectInput>
+					<FormDropdownInput value={this.props.getSettingsProp('appearance.locale')} onChange={this.onLocaleChange}>
+						<FormDropdownOption value="en">English</FormDropdownOption>
+						<FormDropdownOption value="de">Deutsch</FormDropdownOption>
+					</FormDropdownInput>
 
 					<FormLabel>{this.props.getLocalizedTranslation('theme')}</FormLabel>
-					<FormSelectInput value={this.props.getSettingsProp('appearance.theme')} onChange={this.onThemeChange}>
+					<FormDropdownInput value={this.props.getSettingsProp('appearance.theme')} onChange={this.onThemeChange}>
 						{Object.keys(this.props.getAllThemes()).map((theme, key) => {
-							return <FormSelectOption key={key} value={theme}>{theme}</FormSelectOption>
+							return <FormDropdownOption key={key} value={theme}>{theme}</FormDropdownOption>
 						})}
-					</FormSelectInput>
+					</FormDropdownInput>
 
 					<FormButton onClick={this.onSubmit}>{this.props.getLocalizedTranslation('continueButton')}</FormButton>
 				</div>

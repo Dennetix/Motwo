@@ -27,10 +27,9 @@
 	"values": {
 		"background": "#393939",
 
-		"accent": "#2c90e0",		
+		"accent": "#2c90e0",
 
 		"text": "#eeeeee",
-		"errorText": "#ff6666",
 
 		"anchorText": "#999999",
 
@@ -38,8 +37,17 @@
 
 		"formActive": "#3ca0d0",
 
-		"formSubmitBackground": "#2c2c2c",
-		"formSubmitColor": "#ffffff",
+		"formButtonBackground": "#2c2c2c",
+		"formButtonColor": "#eeeeee",
+
+		"formDropdownInputBackground": "#444444",
+		"formDropdownOptionBackground": "#3f3f3f",
+		"formDropdownInputColor": "#eeeeee",
+
+		"formLabelColor": "#eeeeee",
+
+		"formMessageColor": "#eeeeee",
+		"formErrorMessageColor": "#ff6666",
 
 		"formTextInputBackground": "#444444",
 		"formTextInputColor": "#eeeeee"

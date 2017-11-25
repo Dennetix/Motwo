@@ -15,9 +15,7 @@ export const getLocalizedTranslation = (name, index) => {
 	let locale = locales[getSettingsProp('appearance.locale')];
 	if(!locale) {
 		console.warn('Wrong locale setting in settings.json. Using "en"');
-		console.log('hell');
 		setSettingsProp({appearance: {locale: 'en'}}, false);
-		console.log('hdsa');
 		locale = locales.en;
 	}
 

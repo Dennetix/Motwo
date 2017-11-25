@@ -10,7 +10,7 @@ export default class FormMessage extends React.Component {
 			lineHeight: '115%',
 			transform: 'translateX(1px)',
 
-			color: this.props.error ? this.props.getThemeProp('errorText') : 'inherit'
+			color: this.props.error ? this.props.getThemeProp('formErrorMessageColor') : this.props.getThemeProp('formMessageColor')
 		};
 	}
 

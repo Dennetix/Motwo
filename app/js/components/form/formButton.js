@@ -10,8 +10,8 @@ export default class FormButton extends React.Component {
 			margin: '10px 0 8px 0',
 			borderRadius: '3px',
 
-			background: this.props.getThemeProp('formSubmitBackground'),
-			color: this.props.getThemeProp('formSubmitColor'),
+			background: this.props.getThemeProp('formButtonBackground'),
+			color: this.props.getThemeProp('formButtonColor'),
 
 			outline: 'none',
 			border: 'none',

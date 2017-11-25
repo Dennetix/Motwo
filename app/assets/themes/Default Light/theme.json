@@ -30,7 +30,6 @@
 		"accent": "#2c90e0",
 
 		"text": "#000000",
-		"errorText": "#ee2222",
 
 		"anchorText": "#3295e5",
 
@@ -38,10 +37,19 @@
 
 		"formActive": "#2c90f0",
 
-		"formSubmitBackground": "#444444",
-		"formSubmitColor": "#ffffff",
+		"formButtonBackground": "#444444",
+		"formButtonColor": "#ffffff",
+
+		"formDropdownInputBackground": "#eaeaea",
+		"formDropdownOptionBackground": "#e0e0e0",
+		"formDropdownInputColor": "#000000",
+
+		"formLabelColor": "#000000",
+
+		"formMessageColor": "#000000",
+		"formErrorMessageColor": "ee2222",
 
 		"formTextInputBackground": "#eaeaea",
-		"formTextInputColor": "#000000" 
+		"formTextInputColor": "#000000"
 	}
 }

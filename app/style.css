@@ -30,3 +30,11 @@ b {
 img {
 	pointer-events: none
 }
+
+div {
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}

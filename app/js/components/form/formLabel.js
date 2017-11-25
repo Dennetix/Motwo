@@ -9,7 +9,9 @@ export default class FormLabel extends React.Component {
 			margin: '10px 0 2px 0',
 			lineHeight: '115%',
 			transform: 'translateX(1px)',
-            display: 'block'
+			display: 'block',
+
+			color: this.props.getThemeProp('formLabelColor')
 		};
 	}
 
