@@ -12,7 +12,7 @@ let settings = { // Initialize with default settings
 	appearance: {
 		locale: 'en',
 		theme: 'Default Dark',
-		sidepanelWidth: 300
+		sidepanelWidth: 350
 	},
 	
 	chat: {

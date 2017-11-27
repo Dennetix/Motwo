@@ -43,9 +43,9 @@ export default class FormDroptownInput extends React.Component {
 	onBlur() {
 		this.setState({showOptions: false});
 	}
-	
+
 	@autobind
-	onClick(e) {
+	onOptionSelect(e) {
 		this.props.onChange && this.props.onChange(this.props.children.find(c => c.props.children === e.target.innerText));
 		document.activeElement.blur();
 	}
@@ -71,7 +71,7 @@ export default class FormDroptownInput extends React.Component {
 					this.state.showOptions && 
 					<div style={style.options}>
 						{this.props.children.map((c, key) => {
-							return <div key={key} onClick={this.onClick}>{c}</div>
+							return <div key={key} onClick={this.onOptionSelect}>{c}</div>
 						})}
 					</div>
 				}

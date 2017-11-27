@@ -48,7 +48,7 @@ export default class LoginPage extends React.Component {
 
 		AppStore.isLoading = true;
 
-		if(!pass.startsWith('ouath:'))
+		if(!pass.startsWith('oauth:'))
 			pass = 'oauth:' + pass;
 
 		chat.login(user, pass)

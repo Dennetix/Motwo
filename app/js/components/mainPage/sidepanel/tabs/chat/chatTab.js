@@ -12,8 +12,6 @@ export default class ChatTab extends React.Component {
 			container: {
 				width: '100%',
 				height: '100%'
-			},
-			messages: {
 			}
 		};
 	}
@@ -23,9 +21,7 @@ export default class ChatTab extends React.Component {
 
 		return (
 			<div style={style.container}>
-				<div style={style.messages}>
-					{ ChatStore.messages } 
-				</div>
+				{ ChatStore.messages } 
 			</div>
 		)
 	}
