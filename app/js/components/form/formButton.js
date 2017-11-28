@@ -1,7 +1,9 @@
 import React from 'react';
+import radium from 'radium';
 import theme from '../../utils/theme';
 
 @theme
+@radium
 export default class FormButton extends React.Component {
 	getStyle() {
 		return {
@@ -11,11 +13,16 @@ export default class FormButton extends React.Component {
 			borderRadius: '3px',
 
 			background: this.props.getThemeProp('formButtonBackground'),
+			transition: 'background 0.1s',			
 			color: this.props.getThemeProp('formButtonColor'),
 
 			outline: 'none',
 			border: 'none',
-			cursor: 'pointer'
+			cursor: 'pointer',
+
+			':hover': {
+				background: this.props.getThemeProp('formButtonHoverBackground')
+			}
 		};
 	}
 

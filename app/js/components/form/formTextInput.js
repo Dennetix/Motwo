@@ -22,7 +22,7 @@ export default class FormTextInput extends React.Component {
 			border: '0.5px solid ' + this.props.getThemeProp('formTextInputBackground'),
 			
 			':focus': {
-				border: '0.5px solid ' + this.props.getThemeProp('formActive')
+				border: '0.5px solid ' + this.props.getThemeProp('accent')
 			}
 		};
 	}

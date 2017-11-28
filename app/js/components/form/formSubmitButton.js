@@ -13,11 +13,16 @@ export default class FormSubmitButton extends React.Component {
 			borderRadius: '3px',
 
 			background: this.props.getThemeProp('formButtonBackground'),
+			transition: 'background 0.1s',
 			color: this.props.getThemeProp('formButtonColor'),
 
 			outline: 'none',
 			border: 'none',
-			cursor: 'pointer'
+			cursor: 'pointer',
+
+			':hover': {
+				background: this.props.getThemeProp('formButtonHoverBackground')
+			}
 		};
 	}
 

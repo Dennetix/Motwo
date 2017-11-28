@@ -5,7 +5,7 @@ import theme from '../../../../../utils/theme';
 
 @theme
 @radium
-export default class UserListSidepanelTab extends React.Component {
+export default class UserListTab extends React.Component {
 	getStyle() {
 		return {
 			container: {

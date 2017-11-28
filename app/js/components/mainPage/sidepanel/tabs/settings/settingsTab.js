@@ -5,7 +5,7 @@ import theme from '../../../../../utils/theme';
 
 @theme
 @radium
-export default class SettingsSidepanelTab extends React.Component {
+export default class SettingsTab extends React.Component {
 	getStyle() {
 		return {
 			container: {

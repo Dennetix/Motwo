@@ -25,31 +25,29 @@
 	},
 
 	"values": {
-		"background": "#393939",
+		"background": "#383A3F",
+		"sidepanelBackground": "#34363B",
 
-		"accent": "#2c90e0",
+		"accent": "#3D9BD0",
 
-		"text": "#eeeeee",
+		"text": "#EFEFEF",
 
-		"anchorText": "#999999",
+		"anchorText": "#5CC0F0",
 
-		"sidepanelBackground": "#333333",
+		"formButtonBackground": "#29292D",
+		"formButtonHoverBackground": "#252528",
+		"formButtonColor": "#EFEFEF",
 
-		"formActive": "#3ca0d0",
+		"formDropdownInputBackground": "#44454A",
+		"formDropdownOptionBackground": "#3C3D42",
+		"formDropdownInputColor": "#EFEFEF",
 
-		"formButtonBackground": "#2c2c2c",
-		"formButtonColor": "#eeeeee",
+		"formLabelColor": "#EFEFEF",
 
-		"formDropdownInputBackground": "#444444",
-		"formDropdownOptionBackground": "#3f3f3f",
-		"formDropdownInputColor": "#eeeeee",
+		"formMessageColor": "#EFEFEF",
+		"formErrorMessageColor": "#EB7575",
 
-		"formLabelColor": "#eeeeee",
-
-		"formMessageColor": "#eeeeee",
-		"formErrorMessageColor": "#ff6666",
-
-		"formTextInputBackground": "#444444",
-		"formTextInputColor": "#eeeeee"
+		"formTextInputBackground": "#44454A",
+		"formTextInputColor": "#EFEFEF"
 	}
 }
