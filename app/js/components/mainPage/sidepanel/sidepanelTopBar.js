@@ -20,7 +20,7 @@ export default class SidepanelTopBar extends React.Component {
 				WebkitAppRegion: 'no-drag'
 			},
 			tab: {
-				width: 'calc(25% - 1px)',
+				width: 'calc(25%)',
 				height: '100%', 
 				display: 'inline-block',
 				transition: 'background 0.1s',

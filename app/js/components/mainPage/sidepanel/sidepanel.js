@@ -39,9 +39,9 @@ export default class Sidepanel extends React.Component {
 			},
 			dragbar: {
 				width: '6px',
-				height: '95%',
+				height: 'calc(100% - 3.5rem)',
 				position: 'absolute',
-				top: 0,
+				top: '3.5rem',
 				right: 0,
 
 				':hover': {
