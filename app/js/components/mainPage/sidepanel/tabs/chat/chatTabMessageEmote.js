@@ -4,6 +4,7 @@ export default class ChatTabMessageEmote extends React.Component {
 	getStyle() {
 		return {
 			width: '2em',
+			padding: '2px',
 			verticalAlign: 'middle'
 		};
 	}

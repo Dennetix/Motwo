@@ -41,6 +41,8 @@ export default class ChatTabMessage extends React.Component {
 								return <img key={key} style={style.badge} src={this.props.getThemeProp('badgePrime', true)} />;
 							case "staff":
 								return <img key={key} style={style.badge} src={this.props.getThemeProp('badgeStaff', true)} />;
+							case "subscriber":
+								return <img key={key} style={style.badge} src={this.props.getThemeProp('badgeSubscriber', true)} />;
 							case "turbo":
 								return <img key={key} style={style.badge} src={this.props.getThemeProp('badgeTurbo', true)} />;
 							case "partner":

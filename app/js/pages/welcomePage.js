@@ -25,7 +25,7 @@ export default class WelcomePage extends React.Component {
 				top: '50%',
 				transform: 'translateY(-200%)',
 				textAlign: 'center',
-				lineHeight: '325%'			
+				lineHeight: '325%'
 			},
 			settings: {
 				width: '22rem',

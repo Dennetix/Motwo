@@ -20,13 +20,14 @@
 		"badgeModerator": "./icons/chatBadges/moderator.png",
 		"badgePrime": "./icons/chatBadges/prime.png",
 		"badgeStaff": "./icons/chatBadges/staff.png",
+		"badgeSubscriber": "./icons/chatBadges/subscriber.png",		
 		"badgeTurbo": "./icons/chatBadges/turbo.png",
 		"badgeVerified": "./icons/chatBadges/verified.png"
 	},
 
 	"values": {
-		"background": "#FFFFFE",
-		"sidepanelBackground": "#EEEDEA",
+		"background": "#FEFFFE",
+		"sidepanelBackground": "#EDECEC",
 
 		"accent": "#2C90E0",
 
