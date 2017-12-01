@@ -6,9 +6,9 @@ import utils from '../utils/utils';
 import locale from '../utils/locale';
 import settings from '../utils/settings'
 
-import FormMessage from '../components/form/formMessage'
-import FormTextInput from '../components/form/formTextInput';
-import FormSubmitButton from '../components/form/formSubmitButton';
+import FormMessage from '../components/ui/formMessage'
+import FormTextInput from '../components/ui/formTextInput';
+import FormSubmitButton from '../components/ui/formSubmitButton';
 
 import AppStore from '../stores/appStore';
 

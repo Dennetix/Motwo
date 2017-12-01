@@ -4,10 +4,10 @@ import locale from '../utils/locale';
 import settings from '../utils/settings';
 import theme from '../utils/theme';
 
-import FormLabel from '../components/form/formLabel';
-import FormDropdownInput from '../components/form/formDropdownInput';
-import FormDropdownOption from '../components/form/formDropdownOption';
-import FormButton from '../components/form/formButton';
+import FormLabel from '../components/ui/formLabel';
+import FormDropdownInput from '../components/ui/formDropdownInput';
+import FormDropdownOption from '../components/ui/formDropdownOption';
+import FormButton from '../components/ui/formButton';
 
 @locale
 @settings
