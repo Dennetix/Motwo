@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import chat from '../utils/chat';
 import utils from '../utils/utils';
 import locale from '../utils/locale';
-import settings from '../utils/settings'
+import { setSettingsProp } from '../utils/settings'
 
 import FormMessage from '../components/ui/formMessage'
 import FormTextInput from '../components/ui/formTextInput';
@@ -13,7 +13,6 @@ import FormSubmitButton from '../components/ui/formSubmitButton';
 import AppStore from '../stores/appStore';
 
 @locale
-@settings
 @observer
 export default class JoinPage extends React.Component {
 	getStyle() {
@@ -48,12 +47,12 @@ export default class JoinPage extends React.Component {
 
 		chat.join(channel)
 			.then(() => {
-				this.props.setSettingsProp({login: {channel}}, false);
+				setSettingsProp({login: {channel}}, false);
 
 				AppStore.isLoading = false;				
 			})
 			.catch(err => {
-				this.props.setSettingsProp({login: {channel: undefined}}, false);
+				setSettingsProp({login: {channel: undefined}}, false);
 				
 				AppStore.errorMessage = err;
 				AppStore.isLoading = false;

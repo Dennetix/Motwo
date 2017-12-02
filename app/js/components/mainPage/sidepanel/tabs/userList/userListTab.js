@@ -1,10 +1,5 @@
 import React from 'react';
-import radium from 'radium';
-import autobind from 'autobind-decorator';
-import theme from '../../../../../utils/theme';
 
-@theme
-@radium
 export default class UserListTab extends React.Component {
 	getStyle() {
 		return {

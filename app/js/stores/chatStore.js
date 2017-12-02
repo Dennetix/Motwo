@@ -4,13 +4,11 @@ import { splitAt } from '../utils/utils';
 import { getSettingsProp } from '../utils/settings';
 import { getThemeProp } from '../utils/theme';
 
-import utils from '../utils/utils';
-
 import ChatMessage from '../components/mainPage/sidepanel/tabs/chat/chatTabMessage';
 import ChatMessageEmote from '../components/mainPage/sidepanel/tabs/chat/chatTabMessageEmote';
 
 class ChatStore {
-	@observable messages = [];
+	@observable.shallow messages = [];
 
 	addMessage(msg) {
 		const parameters = msg.split(/:\w+!\w+@\w+.tmi.twitch.tv/gi)[0].split(';');

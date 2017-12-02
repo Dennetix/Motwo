@@ -5,7 +5,6 @@ import path from 'path';
 import mkdirp from 'mkdirp';
 import config from '../config';
 import { setSettingsProp, getSettingsProp } from './settings';
-import utils from '../utils/utils';
 
 const defaultThemes = {
 	'Default Light': require('../../assets/themes/Default Light/theme.json'), 

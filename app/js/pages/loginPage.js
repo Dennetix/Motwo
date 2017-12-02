@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import chat from '../utils/chat';
 import utils from '../utils/utils';
 import locale from '../utils/locale';
-import settings from '../utils/settings';
+import { setSettingsProp } from '../utils/settings';
 
 import FormMessage from '../components/ui/formMessage'
 import FormTextInput from '../components/ui/formTextInput';
@@ -14,7 +14,6 @@ import ExternalLink from '../components/ui/externalLink';
 import AppStore from '../stores/appStore';
 
 @locale
-@settings
 @observer
 export default class LoginPage extends React.Component {
 	getStyle() {
@@ -53,12 +52,12 @@ export default class LoginPage extends React.Component {
 
 		chat.login(user, pass)
 			.then(() => {
-				this.props.setSettingsProp({login: {user, pass: new Buffer(pass, 'utf-8').toString('base64')}}, false);
+				setSettingsProp({login: {user, pass: new Buffer(pass, 'utf-8').toString('base64')}}, false);
 
 				AppStore.isLoading = false;
 			})
 			.catch(err => {
-				this.props.setSettingsProp({login: {user: undefined, pass: undefined}}, false);
+				setSettingsProp({login: {user: undefined, pass: undefined}}, false);
 
 				AppStore.errorMessage = err;
 				AppStore.isLoading = false;
@@ -78,7 +77,13 @@ export default class LoginPage extends React.Component {
 					}
 					<FormTextInput placeholder={this.props.getLocalizedTranslation('username')} />
 					<FormTextInput placeholder={this.props.getLocalizedTranslation('password')} type="password" />
-					<FormMessage>{this.props.getLocalizedTranslation('getOauth', 0)} <ExternalLink href="http://twitchapps.com/tmi">{this.props.getLocalizedTranslation('getOauth', 1)}</ExternalLink></FormMessage>
+
+					<FormMessage>
+						{this.props.getLocalizedTranslation('getOauth', 0)} 
+						<ExternalLink href="http://twitchapps.com/tmi">
+							{this.props.getLocalizedTranslation('getOauth', 1)}
+						</ExternalLink>
+					</FormMessage>
 
 					<FormSubmitButton value={this.props.getLocalizedTranslation('loginButton')} />
 				</form>

@@ -1,8 +1,6 @@
 import React from 'react';
 import autobind from 'autobind-decorator';
 import { observer } from 'mobx-react';
-import chat from '../../../../../utils/chat';
-import { remote } from 'electron';
 
 import ChatStore from '../../../../../stores/chatStore';
 

@@ -1,11 +1,7 @@
 import React from 'react';
-import radium from 'radium';
-
-import AppStore from '../stores/appStore';
 
 import Sidepanel from '../components/mainPage/sidepanel/sidepanel';
 
-@radium
 export default class MainPage extends React.Component {
 	getStyle() {
 		return {
