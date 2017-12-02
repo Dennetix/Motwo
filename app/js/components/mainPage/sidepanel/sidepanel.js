@@ -49,9 +49,7 @@ export default class Sidepanel extends React.Component {
 				}
 			},
 			tabs: {
-				height: 'calc(100% - 3.5rem - 1px)',
-				overflowX: 'hidden',
-				overflowY: 'auto'
+				height: 'calc(100% - 3.5rem - 1px)'
 			}
 		};
 	}

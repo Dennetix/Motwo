@@ -49,13 +49,13 @@ export default class SidepanelTopBar extends React.Component {
 
 	@autobind
 	onClick(e) {
-		if(e.target.id === 'chat')
+		if(e.target.id === 'chatTab')
 			SidepanelStore.currentTab = SidepanelTabs.CHAT;
-		else if(e.target.id === 'userlist')
+		else if(e.target.id === 'userlistTab')
 			SidepanelStore.currentTab = SidepanelTabs.USER_LIST;
-		else if(e.target.id === 'modules')
+		else if(e.target.id === 'modulesTab')
 			SidepanelStore.currentTab = SidepanelTabs.MODULES;
-		else if(e.target.id === 'settings')
+		else if(e.target.id === 'settingsTab')
 			SidepanelStore.currentTab = SidepanelTabs.SETTINGS;
 	}
 
@@ -69,19 +69,19 @@ export default class SidepanelTopBar extends React.Component {
 
 		return (
 			<div style={style.topBar}>
-				<div id="chat" key="chat" style={[style.tab, chatActiveStyle]} onClick={this.onClick}>
+				<div id="chatTab" key="chatTab" style={[style.tab, chatActiveStyle]} onClick={this.onClick}>
 					<img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarChat', true)} />
 				</div>
 
-				<div id="userlist" key="userlist" style={[style.tab, style.tabBorder, userListActiveStyle]} onClick={this.onClick}>
+				<div id="userlistTab" key="userlistTab" style={[style.tab, style.tabBorder, userListActiveStyle]} onClick={this.onClick}>
 					<img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarUserList', true)} />
 				</div>
 
-				<div id="modules" key="modules" style={[style.tab, style.tabBorder, modulesActiveStyle]} onClick={this.onClick}>
+				<div id="modulesTab" key="modulesTab" style={[style.tab, style.tabBorder, modulesActiveStyle]} onClick={this.onClick}>
 					<img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarModules', true)} />
 				</div>
 
-				<div id="settings" key="settings" style={[style.tab, style.tabBorder, settingsActiveStyle]} onClick={this.onClick}>
+				<div id="settingsTab" key="settingsTab" style={[style.tab, style.tabBorder, settingsActiveStyle]} onClick={this.onClick}>
 					<img style={style.icon} src={this.props.getThemeProp('iconSidepanelTopBarSettings', true)} />
 				</div>
 			</div>
