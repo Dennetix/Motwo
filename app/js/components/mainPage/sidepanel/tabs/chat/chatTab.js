@@ -3,6 +3,7 @@ import autobind from 'autobind-decorator';
 import { observer } from 'mobx-react';
 
 import ChatStore from '../../../../../stores/chatStore';
+import { clearInterval } from 'timers';
 
 @observer
 export default class ChatTab extends React.Component {
@@ -12,14 +13,23 @@ export default class ChatTab extends React.Component {
 		this.state = {
 			autoScroll: true
 		};
+	}
 
-		setInterval(() => {
+	componentDidMount() {
+		this.intervalId = window.setInterval(() => {
 			if(this.state.autoScroll) {
 				let chat = document.getElementById('chat');
 				if(!chat) return;
 				chat.scrollTop = chat.scrollTop + 0.3 * ((chat.scrollHeight - chat.clientHeight) - chat.scrollTop);
 			}
-		}, 40);
+		}, 30);
+
+		let chat = document.getElementById('chat');
+		chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+	}
+
+	componentWillUnmount() {
+		window.clearInterval(this.intervalId);
 	}
 
 	getStyle() {
@@ -54,4 +64,4 @@ export default class ChatTab extends React.Component {
 			</div>
 		)
 	}
-};
+};	

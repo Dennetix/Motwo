@@ -48,8 +48,8 @@ export default class JoinPage extends React.Component {
 		chat.join(channel)
 			.then(() => {
 				setSettingsProp({login: {channel}}, false);
-
-				AppStore.isLoading = false;				
+				
+				AppStore.isLoading = false;
 			})
 			.catch(err => {
 				setSettingsProp({login: {channel: undefined}}, false);

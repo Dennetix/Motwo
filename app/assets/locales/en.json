@@ -8,7 +8,7 @@
 	"loginNotice": ["Log in with your or your bots Twitch account"],
 	"username": ["Username"],
 	"password": ["OAuth Password"],
-	"getOauth": ["Get your OAuth Password", "here"],
+	"getOauth": ["Get your OAuth Password ", "here"],
 	"loginButton": ["Login"],
 	"authFailed": ["Username or password incorrect"],
 

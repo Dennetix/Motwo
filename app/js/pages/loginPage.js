@@ -79,7 +79,7 @@ export default class LoginPage extends React.Component {
 					<FormTextInput placeholder={this.props.getLocalizedTranslation('password')} type="password" />
 
 					<FormMessage>
-						{this.props.getLocalizedTranslation('getOauth', 0)} 
+						{this.props.getLocalizedTranslation('getOauth', 0)}
 						<ExternalLink href="http://twitchapps.com/tmi">
 							{this.props.getLocalizedTranslation('getOauth', 1)}
 						</ExternalLink>

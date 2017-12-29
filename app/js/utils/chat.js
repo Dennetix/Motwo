@@ -93,6 +93,7 @@ export const join = channel => {
 		timeout = setTimeout(() => { 						// The IRC server doesn't respond to invalid JOIN requests so there has to be a timeout
 			socket.removeListener('data', callback);		// Remove the listener
 			AppStore.setChannel(null);
+			console.log('reject');
 			reject(getLocalizedTranslation('invalidChannel'));
 		}, config.irc.joinReqTimeout);
 
